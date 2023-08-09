@@ -109,11 +109,14 @@ class Baccarat extends Component {
   }
 
   handleWindowResize = () => {
-    const { innerWidth, innerHeight } = window;
+    const { clientWidth, clientHeight } = document.body;
     // Set your desired scaling and translation values here
-    const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
-    const translateX = (innerWidth - 1920 * scale) / 2;
-    const translateY = (innerHeight - 1080 * scale) / 2;
+    const scale = Math.min(
+      document.body.clientWidth / 1920,
+      document.body.clientHeight / 1080
+    );
+    const translateX = (clientWidth - 1920 * scale) / 2;
+    const translateY = (clientHeight - clientHeight * scale) / 2;
 
     this.setState({ scale, translateX, translateY });
   };
@@ -892,11 +895,7 @@ class Baccarat extends Component {
         <div
           className="baccarat"
           style={{
-            transform: `${
-              window.innerWidth <= 1536
-                ? `scale(${scale}) translate(${translateX}px, ${translateY}px)`
-                : "none"
-            }`,
+            transform: `${`scale(${scale}) translate(${translateX}px, ${translateY}px)`}`,
           }}
         >
           <div className="baccarat-wrapper">
