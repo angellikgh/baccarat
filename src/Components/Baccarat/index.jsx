@@ -804,7 +804,7 @@ class Baccarat extends Component {
     );
   }
   clearBet() {
-    console.log("cleaaaaaaaaaaa");
+    console.log("DBG - clearBet");
     var innerDiv = document.getElementById("coins-container");
     innerDiv.innerHTML = "";
   }
@@ -892,80 +892,63 @@ class Baccarat extends Component {
   render() {
     const { scale, translateX, translateY } = this.state;
     return (
-      <div>
-        <div className="baccarat-view">
-          <div className="">
-            {/* style={{ transform: `scale(${scale}) translate(${translateX}px, ${translateY}px)` }} */}
-            <div
-              className="baccarat"
-              style={{
-                transform: `${
-                  window.innerWidth <= 1536
-                    ? `scale(${scale}) translate(${translateX}px, ${translateY}px)`
-                    : "none"
-                }`,
-              }}
-            >
-              <div className="baccarat-wrapper">
-                <div id="chip-container"></div>
-                <div id="coins-container"></div>
-                <RecentBets />
-                <div className="baccarat-card-grid">
-                  <Player />
-                  <Banker />
-                </div>
+      <div className="baccarat-view">
+        <div
+          className="baccarat"
+          style={{
+            transform: `${
+              window.innerWidth <= 1536
+                ? `scale(${scale}) translate(${translateX}px, ${translateY}px)`
+                : "none"
+            }`,
+          }}
+        >
+          <div className="baccarat-wrapper">
+            <div id="chip-container"></div>
+            <div id="coins-container"></div>
+            <RecentBets />
+            <div className="baccarat-card-grid">
+              <Player />
+              <Banker />
+            </div>
 
-                <div className="baccarat-footer-grid">
-                  <Wallet
-                    totalbet={this.state.betamount}
-                    playerOverAllbalance={this.state.playerOverAllbalance}
-                  />
-                  <Action
-                    playerFinalScore={this.state.playerFinalScore}
-                    bankerFinalScore={this.state.bankerFinalScore}
-                    selectFive={this.SelectAmount.bind(this, "five")}
-                    selectTwentyFive={this.SelectAmount.bind(
-                      this,
-                      "twenty-five"
-                    )}
-                    selectHundred={this.SelectAmount.bind(this, "hundred")}
-                    selectTwoHundredFifty={this.SelectAmount.bind(
-                      this,
-                      "two-hundred-fifty"
-                    )}
-                    selectFiveHundred={this.SelectAmount.bind(
-                      this,
-                      "five-hundred"
-                    )}
-                    selectThousand={this.SelectAmount.bind(this, "thousand")}
-                    deal={this.deal}
-                    rebet={this.rebet}
-                    dealBtnShow={this.state.dealBtnShow}
-                    rebetBtnShow={this.state.rebetBtnShow}
-                    clearBet={this.clearBet}
-                    clearBtnShow={this.state.clearBtnShow}
-                    playerBetAmount={this.state.playerBetAmount}
-                    tieBetAmount={this.state.tieBetAmount}
-                    bankerBetAmoount={this.state.bankerBetAmoount}
-                    coinType={this.state.coinType}
-                    playerDrop={this.selectWager.bind(
-                      this,
-                      "player-coordinates"
-                    )}
-                    tieDrop={this.selectWager.bind(this, "tie-coordinates")}
-                    bankerDrop={this.selectWager.bind(
-                      this,
-                      "banker-coordinates"
-                    )}
-                    playerhand={this.state.player}
-                    bankerhand={this.state.banker}
-                    playerWinner={this.state.playerWinner}
-                    bankerWinner={this.state.bankerWinner}
-                    gameTied={this.state.gameTied}
-                  />
-                  <Chat />
-                </div>
-              </div>
+            <div className="baccarat-footer-grid">
+              <Wallet
+                totalbet={this.state.betamount}
+                playerOverAllbalance={this.state.playerOverAllbalance}
+              />
+              <Action
+                playerFinalScore={this.state.playerFinalScore}
+                bankerFinalScore={this.state.bankerFinalScore}
+                selectFive={this.SelectAmount.bind(this, "five")}
+                selectTwentyFive={this.SelectAmount.bind(this, "twenty-five")}
+                selectHundred={this.SelectAmount.bind(this, "hundred")}
+                selectTwoHundredFifty={this.SelectAmount.bind(
+                  this,
+                  "two-hundred-fifty"
+                )}
+                selectFiveHundred={this.SelectAmount.bind(this, "five-hundred")}
+                selectThousand={this.SelectAmount.bind(this, "thousand")}
+                deal={this.deal}
+                rebet={this.rebet}
+                dealBtnShow={this.state.dealBtnShow}
+                rebetBtnShow={this.state.rebetBtnShow}
+                clearBet={this.clearBet}
+                clearBtnShow={this.state.clearBtnShow}
+                playerBetAmount={this.state.playerBetAmount}
+                tieBetAmount={this.state.tieBetAmount}
+                bankerBetAmoount={this.state.bankerBetAmoount}
+                coinType={this.state.coinType}
+                playerDrop={this.selectWager.bind(this, "player-coordinates")}
+                tieDrop={this.selectWager.bind(this, "tie-coordinates")}
+                bankerDrop={this.selectWager.bind(this, "banker-coordinates")}
+                playerhand={this.state.player}
+                bankerhand={this.state.banker}
+                playerWinner={this.state.playerWinner}
+                bankerWinner={this.state.bankerWinner}
+                gameTied={this.state.gameTied}
+              />
+              <Chat />
             </div>
           </div>
         </div>

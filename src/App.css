@@ -9,6 +9,7 @@ body {
   background: #000000;
   overflow: hidden;
   padding: 10px;
+  user-select: none;
 }
 
 @font-face {
@@ -16,17 +17,14 @@ body {
   src: url(../public/assets/fonts/eight-bit-dragon.otf);
 }
 
-.baccarat-view {
-  background: url(../public/assets/bg-watermark.svg);
-  background-size: cover;
-  width: 100%;
-  min-height: calc(100vh - 20px);
-  background-attachment: fixed;
-  background-position: center;
-  border-radius: 20px;
+img {
+  pointer-events: none;
 }
 
 .baccarat {
+  background-image: url(/images/bg-watermark.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -520,6 +518,7 @@ i#bankerDivPosition {
   position: relative;
   width: 100%;
   max-width: 435px;
+  align-self: end;
 }
 
 .wallet-wrapper {
@@ -644,6 +643,7 @@ i#bankerDivPosition {
 /***************** CHAT *****************/
 
 .chat {
+  align-self: end;
   max-width: 400px;
   margin-top: -100px;
 }
