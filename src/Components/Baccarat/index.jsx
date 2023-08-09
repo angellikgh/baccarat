@@ -131,7 +131,6 @@ class Baccarat extends Component {
   }
 
   getPos(el) {
-    console.log(el, "ggggggggggg");
     for (
       var lx = 0, ly = 0;
       el !== null;
@@ -645,8 +644,6 @@ class Baccarat extends Component {
     var dimensions = this.getPos(document.getElementById("playerthirdCard"));
     bankerCardDisplay = false;
     var allOffset = this.state.cardOffset;
-    //console.log(allOffset);
-    //console.log(allOffset[4]);
 
     if (allOffset[4]) {
       var gobackOffset = allOffset[4];
@@ -676,8 +673,7 @@ class Baccarat extends Component {
     var bankerThirCardValue = cardObj.v;
     var dimensions = this.getPos(document.getElementById("bankerthirdCard"));
     var allOffset = this.state.cardOffset;
-    //console.log(allOffset);
-    //console.log(allOffset[4]);
+
     if (allOffset[5]) {
       var gobackOffset = allOffset[5];
     } else {
